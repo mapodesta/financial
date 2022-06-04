@@ -13,3 +13,19 @@
   display: flex;
   justify-content: space-between;
 }
+
+.spending-card {
+  width: 30%;
+  background-color: white !important;
+  border-radius: 10px !important;
+}
+
+@media (max-width: 600px) {
+  .balance-card {
+    width: 75%;
+  }
+
+  .spending-card {
+    width: 75%;
+  }
+}

@@ -78,12 +78,14 @@ export function Chart() {
       <div className="container-total">
         <div className="totalMonth">
           <Typography color="text.secondary">Total this month</Typography>
-          <Typography variant="h4">${total}</Typography>
+          <Typography variant="h4">
+            <b>${total}</b>
+          </Typography>
         </div>
         <div className="totalMonth">
           <Typography color="text.secondary">from last month</Typography>
           <Typography>
-            +{Math.floor(Math.random() * (1000 - 100) + 100) / 100}%
+            <b>+{Math.floor(Math.random() * (1000 - 100) + 100) / 100}%</b>
           </Typography>
         </div>
       </div>

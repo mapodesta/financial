@@ -5,17 +5,9 @@ import { Chart } from "./Chart";
 
 export default function Spending() {
   return (
-    <Card
-      variant="outlined"
-      style={{
-        background: "white",
-        width: "30%",
-        borderRadius: "10px",
-      }}
-    >
+    <Card variant="outlined" className="spending-card">
       <CardContent style={{ textAlign: "initial" }}>
         <h2>Spending - Last 7 Days</h2>
-
         <Chart />
       </CardContent>
     </Card>
