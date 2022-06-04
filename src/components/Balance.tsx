@@ -4,6 +4,7 @@ import Card from "@mui/material/Card";
 import { CardContent } from "@mui/material";
 import { useMemo, useState } from "react";
 import "./components.css";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 export default function Balance() {
   const [loading, setLoading] = useState(true);
@@ -18,7 +19,7 @@ export default function Balance() {
         <Typography color="white">My balance</Typography>
         <Typography color="white" variant="h5">
           <div className="flex-switch">
-            {loading ? <b>${money}</b> : "----------"}{" "}
+            {loading ? <b>${money}</b> : <VisibilityOffIcon fontSize="large" />}{" "}
             <Switch
               checked={loading}
               onChange={() => setLoading(!loading)}
