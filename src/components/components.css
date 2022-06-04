@@ -1,0 +1,15 @@
+.balance-card {
+  width: 30%;
+  background-color: rgb(210, 116, 94) !important;
+  border-radius: 10px !important;
+}
+
+.flex-switch {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.container-total {
+  display: flex;
+  justify-content: space-between;
+}
