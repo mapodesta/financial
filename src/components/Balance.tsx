@@ -2,18 +2,23 @@ import Switch from "@mui/material/Switch";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import { CardContent } from "@mui/material";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import "./components.css";
 
 export default function Balance() {
   const [loading, setLoading] = useState(true);
+  const money = useMemo(
+    () => Math.floor(Math.random() * (5000 - 100) + 100),
+    []
+  );
+
   return (
     <Card variant="outlined" className="balance-card">
       <CardContent style={{ textAlign: "initial" }}>
-        <Typography color="text.secondary">My balance</Typography>
-        <Typography color="text.secondary" variant="h4">
+        <Typography color="white">My balance</Typography>
+        <Typography color="white" variant="h5">
           <div className="flex-switch">
-            123.442{" "}
+            {loading ? <b>${money}</b> : "----------"}{" "}
             <Switch
               checked={loading}
               onChange={() => setLoading(!loading)}

@@ -11,6 +11,7 @@ import { Bar } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 import { useEffect, useState } from "react";
 import { Divider, Typography } from "@mui/material";
+import { COLOR } from "../constants";
 
 ChartJS.register(
   CategoryScale,
@@ -47,13 +48,17 @@ export const options = {
 };
 
 const labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const info = labels.map(() => faker.datatype.number({ min: 0, max: 500 }));
+const max = Math.max(...info);
 
 export const data = {
   labels,
   datasets: [
     {
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 500 })),
-      backgroundColor: "rgb(210, 116, 94)",
+      data: info,
+      backgroundColor: info.map((dato: any) =>
+        dato >= max ? COLOR.LTBLUE : COLOR.ORANGE
+      ),
     },
   ],
 };
@@ -73,10 +78,10 @@ export function Chart() {
       <div className="container-total">
         <div className="totalMonth">
           <Typography color="text.secondary">Total this month</Typography>
-          <Typography variant="h3">${total}</Typography>
+          <Typography variant="h4">${total}</Typography>
         </div>
         <div className="totalMonth">
-          <Typography color="text.secondary">Total this month</Typography>
+          <Typography color="text.secondary">from last month</Typography>
           <Typography>
             +{Math.floor(Math.random() * (1000 - 100) + 100) / 100}%
           </Typography>
